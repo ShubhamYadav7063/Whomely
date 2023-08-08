@@ -1,13 +1,11 @@
 {
-  "name": "lec-5",
+  "name": "whomely",
   "version": "1.0.0",
   "description": "food app",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest",
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -d build"
+    "test": "jest"
   },
   "author": "Shubham Yadav",
   "license": "ISC",
