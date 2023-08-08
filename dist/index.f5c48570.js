@@ -44636,7 +44636,7 @@ const RestaurantMenu = ()=>{
         dispatch((0, _cartSlice.addItem)(item));
     };
     // const quantityButton = (id) 
-    console.log(restaurantMenu[0].id);
+    // console.log(restaurantMenu[0].id);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col justify-center items-center",
         children: [
@@ -44890,7 +44890,7 @@ $RefreshReg$(_c, "RestaurantMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../config":"jtCLN","../assets/img/star.png":"jsiwU","../utils/useRestaurantMenu":"fMOkH","../utils/cartSlice":"5RXlr","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"fMOkH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../config":"jtCLN","../assets/img/star.png":"jsiwU","../utils/useRestaurantMenu":"fMOkH","../utils/cartSlice":"5RXlr","react-redux":"bdVon","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fMOkH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$253c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
