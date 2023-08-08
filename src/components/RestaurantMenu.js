@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
 
     // const quantityButton = (id) 
 
-    console.log(restaurantMenu[0].id);
+    // console.log(restaurantMenu[0].id);
 
     return (
         <div className="flex flex-col justify-center items-center">
