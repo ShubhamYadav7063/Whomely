@@ -19,6 +19,5 @@ export const useOutsideClick = (callback) => {
         };
     }, [callback]);
 
-
     return ref;
 };

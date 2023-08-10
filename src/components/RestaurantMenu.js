@@ -2,9 +2,10 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL, ITEM_IMG_CDN_URL } from "../config";
 import star from "../assets/img/star.png";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const RestaurantMenu = () => {
     const resId = useParams();
@@ -13,14 +14,17 @@ const RestaurantMenu = () => {
 
     const dispatch = useDispatch();
 
-    const [increaseQuantity, setIncreaseQuantity] = useState(false);
+    const cartItems = useSelector((store) => store.cart.items);
 
     const addFoodItem = (item) => {
         dispatch(addItem(item));
     };
 
+    const removeFoodItem = (item) => {
+        dispatch(removeItem(item));
+    };
 
-    // const quantityButton = (id) 
+    // const quantityButton = (id)
 
     // console.log(restaurantMenu[0].id);
 
@@ -98,27 +102,39 @@ const RestaurantMenu = () => {
                                     src={ITEM_IMG_CDN_URL + item.imageId}
                                     className="w-48 rounded-lg h-40 -z-1"
                                 />
-                                {increaseQuantity ? (
-                                    <section className="relative -top-4">
-                                        <button className="bg-red-500 rounded-lg text-white font-bold hover:bg-red-600 px-3 py-2 select-none">
-                                            {"-"}
-                                        </button>
-                                        <span className="select-none">
-                                            count
-                                        </span>
-                                        <button className="bg-red-500 rounded-lg text-white font-bold hover:bg-red-600 px-3 py-2 select-none">
-                                            {"+"}
-                                        </button>
-                                    </section>
-                                ) : (
+                                {cartItems.filter((food) => food.id === item.id)
+                                    .length === 0 ? (
                                     <button
-                                        className="relative -top-4 bg-red-500 p-2 w-2/5 rounded-lg -m-2 text-white font-bold text-sm hover:bg-red-600"
+                                        className="relative -top-4 bg-red-500 py-2 px-3 w-2/5 rounded-lg -m-2 text-white font-bold text-sm hover:bg-red-600"
                                         onClick={() => {
                                             addFoodItem(item);
                                         }}
                                     >
                                         ADD +
                                     </button>
+                                ) : (
+                                    <section className="relative -top-4 bg-white rounded-lg -m-2">
+                                        <button
+                                            className="bg-red-500 rounded-lg text-white font-bold hover:bg-red-600 px-3 py-2 select-none "
+                                            onClick={() => removeFoodItem(item)}
+                                        >
+                                            {"-"}
+                                        </button>
+                                        <span className="select-none mx-3 px-1 py-2 font-bold">
+                                            {
+                                                cartItems.filter(
+                                                    (food) =>
+                                                        food.id === item.id
+                                                ).length
+                                            }
+                                        </span>
+                                        <button
+                                            className="bg-red-500 rounded-lg text-white font-bold hover:bg-red-600 px-3 py-2 select-none"
+                                            onClick={() => addFoodItem(item)}
+                                        >
+                                            {"+"}
+                                        </button>
+                                    </section>
                                 )}
                             </section>
                         </div>

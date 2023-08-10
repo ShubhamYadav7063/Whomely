@@ -59,8 +59,22 @@ const Header = () => {
         <div className="flex justify-around items-center shadow select-none sticky top-0 bg-white p-2 z-50">
             {/* -------------- Navbar -------------- */}
 
+            {/* <section className=" flex "> */}
             <Title />
-
+            {/* {!isOnline ? (
+                    <span>
+                        {isOnline
+                            ? toast.success("Back Online", {
+                                  position: toast.POSITION.BOTTOM_LEFT,
+                              })
+                            : toast.error("You are Offline", {
+                                  position: toast.POSITION.BOTTOM_LEFT,
+                              })}
+                    </span>
+                ) : (
+                    ""
+                )}
+            </section> */}
             {/* <h1>{title}</h1> */}
 
             {/* <button onClick={() => { setTitle("New Food App") }}>change title</button> */}
@@ -98,56 +112,53 @@ const Header = () => {
             </div>
             {/* ------------------------------------------- */}
 
-            <div className="flex items-center">
-                <h1 className="font-normal text-md cursor-default m-3">
-                    {isOnline ? "🟢" : "🔴"}
-                </h1>
+            <section className="flex">
+                <div className="flex items-center">
+                    {/* -------------- user details -------------- */}
 
-                {/* -------------- user details -------------- */}
+                    {!userName ? (
+                        <p className="p-5 tracking-wide">Hi👋, User</p>
+                    ) : (
+                        <p className="p-5 tracking-wide">
+                            Hi👋, <b>{userName}</b>
+                        </p>
+                    )}
 
-                {!userName ? (
-                    <p className="p-5 tracking-wide">Hi👋, User</p>
-                ) : (
-                    <p className="p-5 tracking-wide">
-                        Hi👋, <b>{userName}</b>
-                    </p>
-                )}
+                    {/* ------------------------------------------- */}
 
-                {/* ------------------------------------------- */}
+                    {/* -------------- User Details -------------- */}
 
-                {/* -------------- User Details -------------- */}
-
-                {isLoggedIn ? (
-                    <button
-                        className="font-bold bg-red-500 hover:bg-red-600 p-3 text-white rounded-lg"
-                        onClick={() => {
-                            setIsLoggedIn(false);
-                            setUserName("");
-                        }}
-                    >
-                        Logout
-                    </button>
-                ) : (
-                    <>
-                        <button
-                            className="font-bold bg-red-500 hover:bg-red-600 p-3 text-white rounded-lg mx-3"
-                            onClick={() => setShowSignupForm(true)}
-                        >
-                            Sign Up
-                        </button>
+                    {isLoggedIn ? (
                         <button
                             className="font-bold bg-red-500 hover:bg-red-600 p-3 text-white rounded-lg"
                             onClick={() => {
-                                setShowLoginForm(true);
+                                setIsLoggedIn(false);
+                                setUserName("");
                             }}
                         >
-                            Login
+                            Logout
                         </button>
-                    </>
-                )}
-                {/* ------------------------------------------- */}
-            </div>
-
+                    ) : (
+                        <>
+                            <button
+                                className="font-bold bg-red-500 hover:bg-red-600 p-3 text-white rounded-lg mx-3"
+                                onClick={() => setShowSignupForm(true)}
+                            >
+                                Sign Up
+                            </button>
+                            <button
+                                className="font-bold bg-red-500 hover:bg-red-600 p-3 px-5 text-white rounded-lg"
+                                onClick={() => {
+                                    setShowLoginForm(true);
+                                }}
+                            >
+                                Login
+                            </button>
+                        </>
+                    )}
+                    {/* ------------------------------------------- */}
+                </div>
+            </section>
             {/* -------------- Login Form -------------- */}
 
             <Login
@@ -163,7 +174,7 @@ const Header = () => {
                 onUpdate={updateUserInfo}
                 showToast={SignInAction}
             />
-            
+
             {/* ------------------------------------------- */}
         </div>
     );

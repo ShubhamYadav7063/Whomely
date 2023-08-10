@@ -58,8 +58,8 @@ const Signup = ({ visiblity, onClose, onUpdate, showToast }) => {
                 <form
                     onSubmit={formik.handleSubmit}
                     className="flex flex-col items-center w-1/3 bg-white rounded-xl shadow-lg p-10"
-                    >
-                    <ToastContainer/>
+                >
+                    <ToastContainer />
                     <button
                         className="relative -top-4 left-60 h-7 w-7 font-bold hover:shadow-lg"
                         type="button"

@@ -1,6 +1,3 @@
-import { Outlet } from "react-router-dom";
-import ProfileFunctionalComponent from "./Profile";
-import Profile from "./ProfileClass";
 import React from "react";
 import linkedin from "../assets/linkedin.svg";
 import instagram from "../assets/instagram.svg";

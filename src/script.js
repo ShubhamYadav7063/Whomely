@@ -28,11 +28,11 @@ const AppLayout = () => {
     return (
         <Provider store={store}>
                 <Header />
-            <UserContext.Provider>
+            {/* <UserContext.Provider> */}
                 <ToastContainer/>
                 {/* All the Children will go into the outlet */}
                 <Outlet /> {/*//This is provided by react-router-dom*/}
-            </UserContext.Provider>
+            {/* </UserContext.Provider> */}
                 <Footer />
         </Provider>
     );
