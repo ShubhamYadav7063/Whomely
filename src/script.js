@@ -27,13 +27,13 @@ const Instamart = lazy(() => import("./components/Instamart.js"));
 const AppLayout = () => {
     return (
         <Provider store={store}>
-                <Header />
+            <Header />
             {/* <UserContext.Provider> */}
-                <ToastContainer/>
-                {/* All the Children will go into the outlet */}
-                <Outlet /> {/*//This is provided by react-router-dom*/}
+            <ToastContainer />
+            {/* All the Children will go into the outlet */}
+            <Outlet /> {/*//This is provided by react-router-dom*/}
             {/* </UserContext.Provider> */}
-                <Footer />
+            <Footer />
         </Provider>
     );
 };

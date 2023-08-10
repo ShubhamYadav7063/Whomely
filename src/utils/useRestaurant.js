@@ -13,6 +13,25 @@ const useRestaurant = () => {
         const data = await fetch(FETCH_RES_URL);
 
         const json = await data.json();
+        // console.log(
+        //     json?.data?.cards
+        //         ?.flatMap(
+        //             (card) =>
+        //                 card?.card?.card?.gridElements?.infoWithStyle
+        //                     ?.restaurants || []
+        //         )
+        //         .map((restaurant) => restaurant?.info)
+        // );
+
+        setAllRestaurants(
+            json?.data?.cards
+                ?.flatMap(
+                    (card) =>
+                        card?.card?.card?.gridElements?.infoWithStyle
+                            ?.restaurants || []
+                )
+                .map((restaurant) => restaurant?.info)
+        );
 
         // setAllRestaurants(json?.data?.cards[2]?.gridElements?.infoWithStyle?.restaurants?.data?.data?.cards);
         // console.log(json?.data?.cards[2]?.data?.data?.cards)
