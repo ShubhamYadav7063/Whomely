@@ -25,19 +25,15 @@ import "react-toastify/dist/ReactToastify.css";
 const Instamart = lazy(() => import("./components/Instamart.js"));
 
 const AppLayout = () => {
-    const [user, setUser] = useState({
-        name: "Shubham",
-        email: "shubhamyadav7063@gmail.com",
-    });
     return (
         <Provider store={store}>
-            <UserContext.Provider value={{ user }}>
                 <Header />
+            <UserContext.Provider>
                 <ToastContainer/>
                 {/* All the Children will go into the outlet */}
                 <Outlet /> {/*//This is provided by react-router-dom*/}
-                <Footer />
             </UserContext.Provider>
+                <Footer />
         </Provider>
     );
 };

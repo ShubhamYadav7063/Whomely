@@ -5,12 +5,17 @@ module.exports = {
     tailwindAttributes: ["className"],
     theme: {
         fontFamily: {
-            sans: ["poppins"],
+            sans: [
+                "poppins",
+                {
+                    fontFeatureSettings: '"cv11", "ss01"',
+                    fontVariationSettings: '"opsz" 32',
+                },
+            ],
         },
         extend: {
             backgroundImage: {
-                "about-us":
-                    "url('./src/assets/about-us.jpg')",
+                "about-us": "url('./src/assets/about-us.jpg')",
             },
         },
     },

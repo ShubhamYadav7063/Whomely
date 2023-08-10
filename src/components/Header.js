@@ -35,12 +35,12 @@ const Header = () => {
 
     const SignInAction = () => {
         toast.success("Thanks for Signing Up", {
-            position: toast.POSITION.TOP_RIGHT,
+            position: toast.POSITION.TOP_CENTER,
         });
     };
     const LogInAction = () => {
         toast.success("Thanks for Logging In", {
-            position: toast.POSITION.TOP_RIGHT,
+            position: toast.POSITION.TOP_CENTER,
         });
     };
 
