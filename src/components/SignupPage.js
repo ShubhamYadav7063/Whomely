@@ -159,10 +159,10 @@ const Signup = ({ visiblity, onClose, onUpdate, showToast }) => {
                         type="submit"
                         className="font-bold bg-red-500 hover:bg-red-600 p-3 w-40 m-4 text-white rounded-lg"
                     >
-                        SignUp
+                        Sign up
                     </button>
                     <p className="text-xs m-0">
-                        By Clicking SignUp, you accept our terms and conditions.
+                        By Clicking Sign up, you accept our terms and conditions.
                     </p>
 
                     <span className="h-0.5 w-full bg-gray-300 lg:w-2/3 my-3"></span>

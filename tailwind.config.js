@@ -13,6 +13,11 @@ module.exports = {
                 "about-us": "url('./src/assets/about-us.jpg')",
             },
         },
+        screens: {
+            mobile: "300px",
+            tablet: "1000px",
+            laptop: "1024px",
+        },
     },
     plugins: [],
 };

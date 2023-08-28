@@ -32,6 +32,7 @@ const Instamart = () => {
                 description={"This is the about section of Instamart"}
                 isVisibile={visibleSection === "about"}
                 setIsVisible={() => setVisibleSection("about")}
+                
             />
 
             <Section
